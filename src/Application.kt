@@ -1,10 +1,13 @@
 package com.swallowtail
 
+import com.swallowtail.db.initializeDb
 import io.ktor.application.Application
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 
 fun main(args: Array<String>) {
+    initializeDb()
+
     val server =
         embeddedServer(Netty, watchPaths = listOf("example"), port = 8080, module = Application::module)
     server.start(wait = true)
