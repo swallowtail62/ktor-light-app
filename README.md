@@ -7,7 +7,9 @@ REST API server
 Default, this app use H2DB(in memory DB), but you can use other DBs.
 For example, MySQL..
 
-```DataSource.kt
+#### DataSource.kt
+
+```
 private fun connectDb() {
     Database.connect(
         "jdbc:mysql://localhost:3306/schema_name?autoReconnect=true&useSSL=false",
@@ -18,7 +20,9 @@ private fun connectDb() {
 }
 ```
 
-```build.gradle
+#### build.gradle
+
+```
 dependencies {
     // add this sentence
     implementation "mysql:mysql-connector-java:5.1.46"
